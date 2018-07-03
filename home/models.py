@@ -203,27 +203,43 @@ class NoticeInfo(models.Model):
 
 # 员工信息
 class UserInfo(models.Model):
+    # id
     user_id = models.AutoField(primary_key=True)
+    # 部门
     department = models.ForeignKey(DepartmentInfo, models.DO_NOTHING, blank=True, null=True)
+    # 角色
     role = models.ForeignKey('UserRole', models.DO_NOTHING, blank=True, null=True)
+    # 姓名
     user_name = models.CharField(max_length=50, blank=True, null=True)
+    # 性别
     user_sex = models.CharField(max_length=10, blank=True, null=True)
+    # 手机
     user_mobile = models.CharField(max_length=20, blank=True, null=True)
+    # 年龄
     user_age = models.IntegerField(blank=True, null=True)
+    # 地址
     user_address = models.CharField(max_length=500, blank=True, null=True)
+    # 账号
     user_num = models.CharField(max_length=100, blank=True, null=True)
+    # 密码
     user_pw = models.CharField(max_length=50, blank=True, null=True)
     user_tel = models.CharField(max_length=20, blank=True, null=True)
+    # 身份证
     user_idnum = models.CharField(max_length=20, blank=True, null=True)
     user_email = models.CharField(max_length=100, blank=True, null=True)
+
     user_addtime = models.DateTimeField()
+    # 用户名
     user_addman = models.CharField(max_length=50, blank=True, null=True)
     user_changetime = models.DateTimeField()
     user_changeman = models.CharField(max_length=50, blank=True, null=True)
     user_intest = models.CharField(max_length=1000, blank=True, null=True)
     user_diploma = models.CharField(max_length=20, blank=True, null=True)
+    # 工资卡
     user_bankcard = models.CharField(max_length=20, blank=True, null=True)
+    # 民族
     user_nation = models.CharField(max_length=20, blank=True, null=True)
+    # 婚姻
     is_married = models.CharField(max_length=10, blank=True, null=True)
     is_used = models.CharField(max_length=10, blank=True, null=True)
 
