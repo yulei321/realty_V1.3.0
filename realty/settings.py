@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'client',
     'staff',
     'adminlist',
+    'haystack',
 
 
 ]
@@ -90,6 +91,7 @@ DATABASES = {
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': 'root123',
+
     }
 }
 
@@ -139,3 +141,15 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static\js'),
 
 ]
+
+
+
+HAYSTACK_CONNECTIONS = {
+        'default': {
+            'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+            'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+        },
+    }
+
+
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

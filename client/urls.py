@@ -27,5 +27,14 @@ urlpatterns = [
     url(r'^customer_state_list.html', views.customer_state_list),
     # 客户来源信息目录
     url(r'^customer_source_list.html', views.customer_source_list),
+    # 客户来源添加
+    url(r'^customer_source_add.html', views.customer_source_add),
+    # 客户删除
+    url(r'^customer_source_list_dele', views.customer_source_list_dele),
+    # 客户查询
+    url(r'^customer_source_list_find', views.customer_source_list_find),
+    # 分页展示
+    url(r'^customer_source_list_tab', views.customer_source_list_tab),
+
 
 ]

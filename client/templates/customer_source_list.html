@@ -94,7 +94,7 @@ for(i=0;i<cs.length;i++){
 </script>
 <script type="text/javascript">
 	function add(){
-			window.location="http://127.0.0.1:8000/client/customer_source_add.html";
+			window.location="/client/customer_source_add.html";
 		}
 
 </script>
@@ -103,7 +103,7 @@ for(i=0;i<cs.length;i++){
 	<body>
 
 
-	<form action="http://localhost:8080/crm/servlet/CustomerSourceQueryServlet"  method="post">
+	<form action="/client/customer_source_list.html"  method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td height="30" background="/static/tab_05.gif">
@@ -132,8 +132,7 @@ for(i=0;i<cs.length;i++){
 								</table>
 							</td>
 							<td width="16">
-								<img src="/static/tab_07.gif" width="16"
-									height="30" />
+								<img src="/static/tab_07.gif" width="16" height="30" />
 							</td>
 						</tr>
 					</table>
@@ -182,7 +181,7 @@ for(i=0;i<cs.length;i++){
 										<td height="20" bgcolor="#FFFFFF" style="width: 3%">
 											<div align="center" class="STYLE1">
 												<div align="center">
-													1
+													{{ forloop.counter }}
 												</div>
 											</div>
 										</td>
@@ -201,7 +200,7 @@ for(i=0;i<cs.length;i++){
 											<div align="center">
 												<span class="STYLE4"><img src="/static/del.gif"
 														width="16" height="16" /><a
-													href="http://localhost:8080/crm/servlet/CustomerSourceDeleteServlet?sourceId=1">删除</a>
+													href="/client/customer_source_list_dele/?sourceId={{ cust_source.source_id }}">删除</a>
 												{{ cust_source.delete }}
                                                 </span>
 											</div>
@@ -229,20 +228,33 @@ for(i=0;i<cs.length;i++){
 								<img src="/static/tab_18.gif" width="12"
 									height="35" />
 							</td>
+
+
 							<td>
 								<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tr>
-										<td class="STYLE4">
-											&nbsp;&nbsp;共有 3 条记录，当前第 1/1 页
-										</td>
-										<td>
+
+                                            <td class="STYLE4">
+											&nbsp;&nbsp;共有4 条记录，当前第 1/1 页
+										    </td>
+
+
+{#                                        {% for pag in cust_paglist %}#}
+                                            <td>
 											<table border="0" align="right" cellpadding="0"
 												cellspacing="0">
 												<tr>
-													<td width="40">
-														<img src="/static/first.gif"
-															width="37" height="15" />
+{#                                                    {% if cust_list_post.has_previous %}#}
+                                                        <td width="40">
+                                                        <a>
+                                                            <img src="/static/first.gif"
+															width="37" height="15"  />
+                                                        </a>
+
 													</td>
+{#                                                    {% endif %}#}
+
+
 													<td width="45">
 														<img src="/static/back.gif"
 															width="43" height="15" />
@@ -253,7 +265,7 @@ for(i=0;i<cs.length;i++){
 													</td>
 													<td width="40">
 														<img src="/static/last.gif"
-															width="37" height="15" />
+															width="37" height="15" name="weiye"/>
 													</td>
 													<td width="100">
 														<div align="center">
@@ -270,6 +282,12 @@ for(i=0;i<cs.length;i++){
 												</tr>
 											</table>
 										</td>
+{#                                        {% endfor %}#}
+
+
+
+
+
 									</tr>
 								</table>
 							</td>

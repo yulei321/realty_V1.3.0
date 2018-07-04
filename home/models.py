@@ -97,6 +97,9 @@ class CustomerSource(models.Model):
     source_name = models.CharField(max_length=50, blank=True, null=True)
     is_used = models.CharField(max_length=10, blank=True, null=True)
 
+    def __unicode__(self):
+        return u'CustomerSource:%s'%self.source_name
+
     class Meta:
         managed = False
         db_table = 'customer_source'
