@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <base href="/">
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<base href="/">
 
 		<title>My JSP 'customerCondition_add.jsp' starting page</title>
 
@@ -13,28 +14,30 @@
 		<meta http-equiv="description" content="This is my page">
 		<LINK href="/static/admin.css" type=text/css  rel=stylesheet>
 		<script type="text/javascript" src="/static/CheckForm.js"></script>
+
 	</head>
 
 	<body>
-		<form action="/client/customer_source_add.html"   name="form3" onsubmit="return checkForm('form3');" method="post"    >
+        <form action="/client/customer_type_add.html"  name="form4" onsubmit="return checkForm('form4');"  method="post" >
 			<table class=editTable cellSpacing=1 cellPadding=0 width="100%"
 				align=center border=0>
 				<tr class=editHeaderTr>
 					<td class=editHeaderTd colSpan=7>
-						请输入顾客来源的详细信息
+						请输入顾客类型的详细信息
 					</td>
 				</tr>
 				<tr>
 					<td width="19%" bgcolor="#FFFDF0">
 						<div align="center">
-							顾客来源名称：
+							顾客类型名称：
 						</div>
 					</td>
 					<td colspan="3" bgcolor="#FFFFFF">
-						<input type="text" name="sourceName"   maxlength="20" check_str="顾客来源名称">
+						<input type="text"  maxlength="20"  name="typeName"  check_str="顾客类型名称">
 						&nbsp;
 					</td>
 				</tr>
+
 
 			</table>
 			<table class=editTable cellSpacing=1 cellPadding=0 width="100%"
@@ -50,6 +53,3 @@
 		</form>
 	</body>
 </html>
-<SCRIPT Language=VBScript><!--
-
-//--></SCRIPT>

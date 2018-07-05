@@ -175,39 +175,38 @@ for(i=0;i<cs.length;i++){
 											</div>
 										</td>
 									</tr>
-
-                                        {% for cust_source in cust_source_list %}
-									<tr>
-										<td height="20" bgcolor="#FFFFFF" style="width: 3%">
-											<div align="center" class="STYLE1">
-												<div align="center">
-													{{ forloop.counter }}
-												</div>
-											</div>
-										</td>
-
-                                            <td height="20" bgcolor="#FFFFFF" style="width: 4%">
-
-                                                <div align="center">
-
-                                                    <span class="STYLE1">{{ cust_source.source_name }}</span>
-
+                                    {% for cust_source in cust_source_list %}
+                                         <tr>
+                                            <td height="20" bgcolor="#FFFFFF" style="width: 3%">
+                                                <div align="center" class="STYLE1">
+                                                    <div align="center">
+                                                        {{ forloop.counter }}
+                                                    </div>
                                                 </div>
-
                                             </td>
 
-										<td      height="20" bgcolor="#FFFFFF" style="width: 9%">
-											<div align="center">
-												<span class="STYLE4"><img src="/static/del.gif"
-														width="16" height="16" /><a
-													href="/client/customer_source_list_dele/?sourceId={{ cust_source.source_id }}">删除</a>
-												{{ cust_source.delete }}
-                                                </span>
-											</div>
-										</td>
-									</tr>
+                                                <td height="20" bgcolor="#FFFFFF" style="width: 4%">
 
-                                     {% endfor %}
+                                                    <div align="center">
+
+                                                        <span class="STYLE1">{{ cust_source.source_name }}</span>
+
+                                                    </div>
+
+                                                </td>
+
+                                            <td      height="20" bgcolor="#FFFFFF" style="width: 9%">
+                                                <div align="center">
+                                                    <span class="STYLE4"><img src="/static/del.gif"
+                                                            width="16" height="16" /><a
+                                                        href="/client/customer_source_list_dele/?sourceId={{ cust_source.source_id }}">删除</a>
+                                                    {{ cust_source.delete }}
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    {% endfor %}
 
 								</table>
 							</td>

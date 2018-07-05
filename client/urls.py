@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^customer_care_list.html', views.customer_care_list),
     url(r'^customer_care_edit.html', views.customer_care_edit),
 
-    # 客户类型信息目录
+    # 客户来源查询
     url(r'^customer_type_list.html', views.customer_type_list),
     # 客户状态信息目录
     url(r'^customer_state_list.html', views.customer_state_list),
@@ -29,12 +29,16 @@ urlpatterns = [
     url(r'^customer_source_list.html', views.customer_source_list),
     # 客户来源添加
     url(r'^customer_source_add.html', views.customer_source_add),
-    # 客户删除
+    # 客户来源删除
     url(r'^customer_source_list_dele', views.customer_source_list_dele),
-    # 客户查询
-    url(r'^customer_source_list_find', views.customer_source_list_find),
     # 分页展示
     url(r'^customer_source_list_tab', views.customer_source_list_tab),
-
-
+    # 客户类型添加
+    url(r'^customer_type_add.html', views.customer_type_add),
+    # 客户类型删除
+    url(r'^customer_type_dele.html', views.customer_type_dele),
+    # 客户状态删除
+    url(r'^customer_state_dele.html', views.customer_state_dele),
+    # 客户状态添加
+    url(r'^customer_state_add.html', views.customer_state_add),
 ]

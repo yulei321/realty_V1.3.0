@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^staff/', include('staff.urls')),
     # 管理员模块
     url(r'^adminlist/', include('adminlist.urls')),
-    url(r'^search/', include('haystack.urls')),
+
 
 
 

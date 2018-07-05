@@ -95,7 +95,7 @@ for(i=0;i<cs.length;i++){
 </script>
 <script type="text/javascript">
 	function add(){
-			window.location="http://localhost:8080/crm/view/customer/customer_type_add.html";
+			window.location.href="customer_type_add.html";
 		}
 
 </script>
@@ -103,8 +103,7 @@ for(i=0;i<cs.length;i++){
 
 	<body>
 
-
-	<form action="http://localhost:8080/crm/servlet/CustomerTypeQueryServlet"  method="post">
+	<form action="/client/customer_type_list.html"  method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td height="30" background="/static/tab_05.gif">
@@ -144,7 +143,7 @@ for(i=0;i<cs.length;i++){
 
 			<tr>
 				<td>
-					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<table width="100%" border="0" cellspa  cing="0" cellpadding="0">
 						<tr>
 							<td width="8"
 								background="/static/tab_12.gif">
@@ -178,30 +177,32 @@ for(i=0;i<cs.length;i++){
 										</td>
 									</tr>
 
-                                    {% for cust_type in cust_type_list %}
-									<tr>
+                                    {% for c in clist %}
+                                        <tr>
 										<td height="20" bgcolor="#FFFFFF" style="width: 3%">
 											<div align="center" class="STYLE1">
 												<div align="center">
-													{{ cust_type.type_id }}
+													{{ forloop.counter }}
 												</div>
 											</div>
 										</td>
 										<td height="20" bgcolor="#FFFFFF" style="width: 4%">
 											<div align="center">
-												<span class="STYLE1">{{ cust_type.type_name }}</span>
+												<span class="STYLE1">{{ c.type_name }}</span>
 											</div>
 										</td>
 										<td      height="20" bgcolor="#FFFFFF" style="width: 9%">
 											<div align="center">
 												<span class="STYLE4"><img src="/static/del.gif"
 														width="16" height="16" /><a
-													href="javascript:void(0)">删除</a>
+													href="/client/customer_type_dele.html/?typeId={{ c.type_id }}">删除</a>
 												</span>
 											</div>
 										</td>
 									</tr>
                                     {% endfor %}
+
+
 
 								</table>
 							</td>

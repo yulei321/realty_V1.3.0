@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-   <title>My JSP 'customerCondition_list.jsp' starting page</title>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<base href="/">
+
+		<title>My JSP 'customerCondition_list.jsp' starting page</title>
 
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
@@ -94,7 +96,7 @@ for(i=0;i<cs.length;i++){
 </script>
 <script type="text/javascript">
 	function add(){
-			window.location="http://localhost:8080/crm/view/customer/customer_state_add.html";
+			window.location.href="/client/customer_state_add.html";
 		}
 
 </script>
@@ -103,7 +105,7 @@ for(i=0;i<cs.length;i++){
 	<body>
 
 
-	<form action="http://localhost:8080/crm/servlet/CustomerConditionQueryServlet"  method="post">
+	<form action="/client/customer_state_list.html"  method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td height="30" background="/static/tab_05.gif">
@@ -167,8 +169,6 @@ for(i=0;i<cs.length;i++){
 												<span class="STYLE1">客户状态</span>
 											</div>
 										</td>
-
-
 										<td background="/static/bg2.gif"
 											bgcolor="#FFFFFF" style="width: 55%; height: 22px;">
 											<div align="center">
@@ -184,41 +184,39 @@ for(i=0;i<cs.length;i++){
 											</div>
 										</td>
 									</tr>
-
-
-                                {% for cust_stat in cust_stat_list %}
+				                {% for s in state_list %}
 
 									<tr>
 										<td height="20" bgcolor="#FFFFFF" style="width: 3%">
 											<div align="center" class="STYLE1">
 												<div align="center">
-													{{ cust_stat.status_id }}
+													{{ forloop.counter }}
 												</div>
 											</div>
 										</td>
 										<td height="20" bgcolor="#FFFFFF" style="width: 4%">
 											<div align="center">
-                                                   <span class="STYLE1">{{ cust_stat.status_name}}</span>
-
-
+												<span class="STYLE1">{{ s.status_name }}</span>
+											</div>
 										</td>
-
 										<td height="20" bgcolor="#FFFFFF" style="width: 32%">
 											<div align="center">
-												<span class="STYLE1">{{ cust_stat.status_explain }}</span>
+												<span class="STYLE1">{{ s.status_explain }}</span>
 											</div>
 										</td>
 										<td      height="20" bgcolor="#FFFFFF" style="width: 9%">
 											<div align="center">
 												<span class="STYLE4"><img src="/static/del.gif"
 														width="16" height="16" /><a
-													href="http://localhost:8080/crm/servlet/CustomerConditionDeleteServlet?conditionId=1">删除</a>
+													href="/client/customer_state_dele.html/?conditionId={{ s.status_id }}">删除</a>
 												</span>
 											</div>
 										</td>
 									</tr>
 
-                                      {% endfor %}
+                                {% endfor %}
+
+
 
 
 								</table>
